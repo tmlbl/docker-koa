@@ -1,3 +1,3 @@
-docker stop -t 0 canary
-docker rm canary
+docker stop -t 0 koa
+docker rm koa
 

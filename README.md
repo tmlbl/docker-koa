@@ -9,4 +9,3 @@ Docker + Koa
 ### Bring up the container
 
 `./up.sh`
-

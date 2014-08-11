@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t tmlbl/canary .
+docker build -t koa .

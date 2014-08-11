@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "API for Canary",
   "main": "app.js",
-  "repository": "",
+  "repository": "https://github.com/tmlbl/docker-koa.git",
   "scripts": {
     "test": "node_modules/.bin/_mocha"
   },
