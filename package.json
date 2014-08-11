@@ -1,0 +1,21 @@
+{
+  "name": "canaryapi",
+  "version": "0.0.0",
+  "description": "API for Canary",
+  "main": "app.js",
+  "repository": "",
+  "scripts": {
+    "test": "node_modules/.bin/_mocha"
+  },
+  "author": "Tim Lebel",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^0.9.0"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "should": "^4.0.4",
+    "mocha": "^1.21.4",
+    "superagent": "^0.18.2"
+  }
+}
