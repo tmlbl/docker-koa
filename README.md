@@ -80,4 +80,21 @@ Maps the virtual port 3000 on the container to port 3000 on the host machine.
 
 `-v $(pwd):/app`
 
-Mounts the data volume of the current directory, the output of the `pwd` command, 
+Mounts the data volume of the current directory, the output of the `pwd` command Let's go through the flags one by one.
+
+`-d`
+
+Runs the container in daemon mode, freeing up the current terminal
+
+`-p 3000:3000`
+
+Maps the virtual port 3000 on the container to port 3000 on the host machine.
+
+`-v $(pwd):/app`
+
+Mounts the data volume of the current directory, represented by the output of the `pwd` command, into the /app directory of the container. Changes we make to files in the current directory will now be instantly reflected inside of the container
+
+`-w /app`
+
+Sets the working directory inside the container to /app. Though we use an absolute path to start supervisor, it throws errors when trying to restart the script unless this is set.
+ 
