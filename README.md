@@ -6,13 +6,11 @@ Docker + Koa
 * [Have docker installed](https://docs.docker.com/installation/)
 * Be able to run docker without sudo
 
-### build.sh
-------------
+## build.sh
 
     ./build.sh
 
-### up.sh
----------
+## up.sh
 
     ./up.sh
 
