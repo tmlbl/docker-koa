@@ -60,7 +60,7 @@ Building your own image is fun, but the real power of docker is being able to up
 
     docker pull tmlbl/koa
 
-Because the repository tmlbl/koa has been uploaded to docker hub, you will be able to start downloading it immediately. The docker creaters maintain the docker hub and offer premium accounts, but it is also possible to create your own docker hub by running the docker-registry container and configuring docker to use that endpoint.
+Because the repository tmlbl/koa has been uploaded to docker hub, you will be able to start downloading it immediately. The docker team maintains the docker hub and offers premium accounts, but it is also possible to create your own docker hub by running the docker-registry container and configuring docker to use that endpoint.
 
 ## up.sh
 
@@ -80,21 +80,16 @@ Maps the virtual port 3000 on the container to port 3000 on the host machine.
 
 `-v $(pwd):/app`
 
-Mounts the data volume of the current directory, the output of the `pwd` command Let's go through the flags one by one.
-
-`-d`
-
-Runs the container in daemon mode, freeing up the current terminal
-
-`-p 3000:3000`
-
-Maps the virtual port 3000 on the container to port 3000 on the host machine.
-
-`-v $(pwd):/app`
-
 Mounts the data volume of the current directory, represented by the output of the `pwd` command, into the /app directory of the container. Changes we make to files in the current directory will now be instantly reflected inside of the container
 
 `-w /app`
 
 Sets the working directory inside the container to /app. Though we use an absolute path to start supervisor, it throws errors when trying to restart the script unless this is set.
- 
+
+`--name=koa`
+
+This assigns a unique string identifier to our container. When running further docker commands, we can specify this container by the name "koa". By default, docker containers are given a unique alphanumeric identifier, but it is much more useful to assign them readable names. For example, we can now run:
+
+`docker logs -f koa`
+
+Which will follow the tail of stdout from the container.
