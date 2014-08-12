@@ -7,6 +7,8 @@ Docker + Koa
 
 ## build.sh
 
+RUN:
+
     docker build -t koa .
 
 To create a docker container we need a docker image. Running the above command in this repository will build us an image that can execute node.js with the --harmony flag in order to run our koa application. The build command looks for a Dockerfile in the current directory. Here is our Dockerfile:
@@ -58,12 +60,24 @@ Building your own image is fun, but the real power of docker is being able to up
 
     docker pull tmlbl/koa
 
-Because the repository tmlbl/koa has been uploaded to docker hub, you will be able to start downloading it immediately.
+Because the repository tmlbl/koa has been uploaded to docker hub, you will be able to start downloading it immediately. The docker creaters maintain the docker hub and offer premium accounts, but it is also possible to create your own docker hub by running the docker-registry container and configuring docker to use that endpoint.
 
 ## up.sh
 
-The script consists of one command:
+RUN:
 
     docker run -d -p 3000:3000 -v $(pwd):/app -w /app --name=koa koa
 
-The docker run command creates a new docker container, which is an instance of a docker image. The image in the above command is the koa image we created above.
+The docker run command creates a new docker container, which is an instance of a docker image. The image in the above command is the koa image we created above. Let's go through the flags one by one.
+
+`-d`
+
+Runs the container in daemon mode, freeing up the current terminal
+
+`-p 3000:3000`
+
+Maps the virtual port 3000 on the container to port 3000 on the host machine.
+
+`-v $(pwd):/app`
+
+Mounts the data volume of the current directory, the output of the `pwd` command, 
