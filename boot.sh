@@ -1,4 +1,4 @@
 #!/bin/sh
 
-supervisor --harmony /app/app.js
+node --harmony /app/app.js
 
