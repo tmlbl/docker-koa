@@ -7,4 +7,4 @@ node_js:
 script:
         - node --harmony $(pwd)/app.js &
         - $(pwd)/node_modules/.bin/_mocha
-
+        - pkill node
