@@ -1,7 +1,7 @@
 {
-  "name": "canaryapi",
+  "name": "docker-koa",
   "version": "0.0.0",
-  "description": "API for Canary",
+  "description": "A Dockerized dev environment for Koa",
   "main": "app.js",
   "repository": "https://github.com/tmlbl/docker-koa.git",
   "scripts": {
