@@ -1,18 +1,23 @@
 Docker + Koa
 ============
 
-## Installing Docker
+## prerequisites
 
 * [Have docker installed](https://docs.docker.com/installation/)
-* Be able to run docker without sudo
 
 ## build.sh
 
-    ./build.sh
+    docker build -t koa .
+
+To create a docker container we need a docker image. Running the above command in this repository will build us an image that can execute node.js with the --harmony flag in order to run our koa application.
+
+If you look at the [Dockerfile](https://github.com/tmlbl/docker-koa/blob/master/Dockerfile) for this project the comments explain what is happening here. Building your own image is fun, but the real power of docker is being able to upload and download versioned images, a lot like versioning code with git. For example, to download the latest version of this image, you can run the following command:
+
+    docker pull tmlbl/koa
+
+Because the repository tmlbl/koa has been uploaded to docker hub, you will be able to start downloading it immediately.
 
 ## up.sh
-
-    ./up.sh
 
 The script consists of one command:
 
